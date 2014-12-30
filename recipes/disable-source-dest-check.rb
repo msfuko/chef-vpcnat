@@ -24,10 +24,10 @@ instance_id = EC2Util.get_instance_id
 
 execute 'disable Source/dest. check' do
   command <<-EOH
-    aws ec2 \
-      --region '#{instance_region}' \
-      modify-instance-attribute \
-        --instance-id '#{instance_id}' \
-        --no-source-dest-check
+    aws ec2 
+    --region '#{instance_region}' 
+    modify-instance-attribute 
+    --instance-id '#{instance_id}'
+    --no-source-dest-check
   EOH
 end
