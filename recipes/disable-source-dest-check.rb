@@ -22,6 +22,10 @@ include_recipe 'awscli'
 instance_region = EC2Util.get_instance_region
 instance_id = EC2Util.get_instance_id
 
+file "/root/.aws/config" do
+  action :delete
+end
+
 execute 'disable Source/dest. check' do
   command <<-EOH
     aws ec2 \
